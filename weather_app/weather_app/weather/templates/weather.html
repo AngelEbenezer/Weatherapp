@@ -1,0 +1,23 @@
+<!-- weather_app/templates/weather_app/weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+</head>
+<body>
+    <h1>Current Weather Information</h1>
+    <form method="get">
+        <input type="text" name="city" placeholder="Enter city">
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather_data.error %}
+        <p>{{ weather_data.error }}</p>
+    {% else %}
+        <p>City: {{ weather_data.city }}</p>
+        <p>Temperature: {{ weather_data.temperature }}°C</p>
+        <p>Condition: {{ weather_data.description }}</p>
+    {% endif %}
+</body>
+</html>
+
